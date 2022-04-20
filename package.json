@@ -1,0 +1,22 @@
+{
+  "name": "gt-style-ui",
+  "version": "1.0.1",
+  "description": "collection of react components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgt-develop/gt-style-ui.git"
+  },
+  "author": "sgt-cb86",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgt-develop/gt-style-ui/issues"
+  },
+  "homepage": "https://github.com/sgt-develop/gt-style-ui#readme",
+  "dependencies": {
+    "styled-components": "^5.3.5"
+  }
+}
