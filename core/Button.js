@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Button = styled.button`
   /* Adapt the colors based on primary prop */
   background: "white"};
+  
   color: "palevioletred"};
   font-size: 1em;
   margin: 1em;
