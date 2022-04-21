@@ -1,6 +1,6 @@
 {
   "name": "gt-style-ui",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "collection of react components",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,8 @@
   "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
     "styled-components": "^5.3.5"
   },
   "dependencies": {
