@@ -1,19 +1,166 @@
 import styled from 'styled-components';
 
 type Props = {
-  color: string;
-  background: string;
-  height: string;
+    variant: string;
+    spacing: string;
+    direction: string;
+    justify: string;
+    alignitems: string;
+    wrap: string;
+    order: string;
+    grow: string;
+    shrink: string;
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+
 };
 
-export const StyledGrid = styled.div<Props>`
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  height: ${(props) => props.height + 'px'};
-  width: 100%;
-  background-color: ${(props) => props.background};
-  color: ${(props) => props.color};
-  :hover {
-    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+const gridSpacing = ({ spacing }: Props) => {
+  // Fallback value if we can't get access to props
+  //if (!props || !props.theme || !props.theme.grid.spacing) return '0px';
+  if (!spacing) return '0px';
+  // If no variant is specified, return the Grid Spacing in our theme
+  //if (!spacing) return props.theme.grid.spacing;
+  if (!spacing) return '0px';
+  // Dynamically determine the Grid Spacing based on props
+  let spacing1;
+  switch (spacing) {
+    case '0':
+      spacing1 = '0px';
+      break;
+    case '1':
+      spacing1 = '4px';
+      break;
+    case '2':
+      spacing1 = '8px';
+      break;
+    case '3':
+      spacing1 = '12px';
+      break;
+    case '4':
+      spacing1 = '16px';
+      break;
+    case '5':
+      spacing1 = '20px';
+      break;
+    case '6':
+      spacing1 = '24px';
+      break;
+    case '7':
+      spacing1 = '28px';
+      break;
+    case '8':
+      spacing1 = '32px';
+      break;
+    case '9':
+      spacing1 = '36px';
+      break;
+    case '10':
+      spacing1 = '40px';
+      break;
+    case '11':
+      spacing1 = '44px';
+      break;
+    case '12':
+      spacing1 = '48px';
+      break;
+    default:
+      spacing1 = '0px';
+      break;
+  }
+  return spacing;
+};
+const gridFlexContainerJustifyContent = ({ justify }:Props) => {
+  // Fallback value if we can't get access to props
+  if (!justify) return 'flex-start';
+  // Dynamically determine the Grid Spacing based on props
+  let justify1;
+  switch (justify) {
+    case 'flex-start':
+      justify1 = 'flex-start';
+      break;
+    case 'flex-end':
+      justify1 = 'flex-end';
+      break;
+    case 'center':
+      justify1 = 'center';
+      break;
+    case 'space-between':
+      justify1 = 'space-between';
+      break;
+    case 'space-around':
+      justify1 = 'space-around';
+      break;
+    case 'space-evenly':
+      justify1 = 'space-evenly';
+      break;
+    default:
+      justify1 = 'flex-start';
+      break;
+  }
+  return justify;
+};
+const gridFlexContainerDirection = ({direction} :Props) => {
+  // Fallback value if we can't get access to props
+  if (!direction) return 'row';
+  // Dynamically determine the Grid Spacing based on props
+  let direction1;
+  switch (direction) {
+    case 'row':
+      direction1 = 'row';
+      break;
+    case 'row-reverse':
+      direction1 = 'row-reverse';
+      break;
+    case 'column':
+      direction1 = 'column';
+      break;
+    case 'column-reverse':
+      direction1 = 'column-reverse';
+      break;
+    default:
+      direction1 = 'row';
+      break;
+  }
+  return direction;
+};
+
+function getWidthString(span) {
+  if (!span) return;
+  let width = (span / 12) * 100;
+  //let width = (span / 12) * 100;
+  return `width: ${width}%;`;
+}
+
+const StyledGrid = styled.div<Props>`
+  padding: ${(props) => gridSpacing(props)};
+`;
+export const StyledGridFlexContainer = styled.div<Props>`
+  display: flex;
+  flex-direction: ${(props) => gridFlexContainerDirection(props)};
+  justify-content: ${(props) => gridFlexContainerJustifyContent(props)};
+  flex-wrap: wrap;
+`;
+export const StyledGridFlexItem = styled.div<Props>`
+  order: ${(props) => props.order};
+  ${(props) => (props.xs ? getWidthString(props.xs) : 'width: 100%')};
+  @media only screen and (min-width: 768px) {
+    ${(props) => props.sm && getWidthString(props.sm)};
+  }
+  @media only screen and (min-width: 992px) {
+    ${(props) => props.md && getWidthString(props.md)};
+  }
+  @media only screen and (min-width: 1200px) {
+    ${(props) => props.lg && getWidthString(props.lg)};
   }
 `;
+export const StyledCssGridContainer = styled.div<Props>`
+  padding: ${(props) => gridSpacing(props)};
+`;
+export const StyledCssGridItems = styled.div<Props>`
+  padding: ${(props) => gridSpacing(props)};
+`;
+export default StyledGrid;
+
