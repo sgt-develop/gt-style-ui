@@ -1,5 +1,5 @@
 import React from "react";
-import StyledGrid, { StyledGridFlexContainer, StyledGridFlexItem, StyledCssGridContainer, StyledCssGridItems } from './Grid.styles';
+import { StyledGrid, StyledGridFlexContainer, StyledGridFlexItem, StyledCssGridContainer, StyledCssGridItems } from './Grid.styles';
 
 export interface Props {
     variant: string;

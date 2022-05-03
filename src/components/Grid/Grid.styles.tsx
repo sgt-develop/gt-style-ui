@@ -134,7 +134,7 @@ function getWidthString(span) {
   return `width: ${width}%;`;
 }
 
-const StyledGrid = styled.div<Props>`
+export const StyledGrid = styled.div<Props>`
   padding: ${(props) => gridSpacing(props)};
 `;
 export const StyledGridFlexContainer = styled.div<Props>`
@@ -162,5 +162,5 @@ export const StyledCssGridContainer = styled.div<Props>`
 export const StyledCssGridItems = styled.div<Props>`
   padding: ${(props) => gridSpacing(props)};
 `;
-export default StyledGrid;
+
 
