@@ -10,14 +10,14 @@ export interface Props {
 
 const Button = ({ label,  color, background, variant }: Props) => {
   if (variant === 'contained') {
-    return <ButtonContained color={color} background={background}>
+    return (<ButtonContained color={color} background={background}>
               {label}
-           </ButtonContained>
+           </ButtonContained>)
   }
   else if (variant === 'outlined') {
-    return <ButtonOutlined color={color} background={background}>
+    return (<ButtonOutlined color={color} background={background}>
             {label}
-           </ButtonOutlined>
+           </ButtonOutlined>)
   }
 };
 

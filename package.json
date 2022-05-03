@@ -1,6 +1,6 @@
 {
   "name": "gt-style-ui",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "scripts": {
     "rollup": "rollup -c",
