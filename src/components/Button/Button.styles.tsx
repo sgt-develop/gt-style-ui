@@ -23,7 +23,7 @@ export const ButtonContained = styled(StyledButton)<Props>`
   overflow: hidden;
   outline: none;
   line-height: inherit;
-  color: ${(props) => props.color};
+  color: ${(Props) => Props.color};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: none;
   cursor: pointer;
@@ -34,17 +34,17 @@ export const ButtonContained = styled(StyledButton)<Props>`
   height: 36px;
   width: auto;
   min-width: 48px;
-  background-color: ${(props) => props.background};
+  background-color: ${(Props) => Props.background};
   background-position: center;
   transition: background 0.8s;
   :hover {
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
       0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-    background: ${(props) => props.background};
+    background: ${(Props) => Props.background};
       radial-gradient(
         circle,
         transparent 1%,
-        ${(props) => props.background}; 1%
+        ${(Props) => Props.background}; 1%
       )
       center/15000%;
   }
@@ -57,7 +57,7 @@ export const ButtonContained = styled(StyledButton)<Props>`
 export const ButtonOutlined = styled(StyledButton)<Props>`
   box-sizing: border-box;
   border: solid 1px;
-  border-color: ${(props) => props.background};
+  border-color: ${(Props) => Props.background};
   border-radius: 4px;
   padding: 0 16px;
   min-width: 64px;
@@ -66,7 +66,7 @@ export const ButtonOutlined = styled(StyledButton)<Props>`
   text-align: center;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  color: ${(props) => props.color};
+  color: ${(Props) => Props.color};
   background-color: transparent;
   overflow: hidden;
   outline: none;
@@ -108,7 +108,7 @@ export const ButtonOutlined = styled(StyledButton)<Props>`
     transition: transform 0s;
   }
   :disabled {
-    color: ${(props) => props.color};
+    color: ${(Props) => Props.color};
     background-color: transparent;
     cursor: initial;
   }
