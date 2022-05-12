@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-type Props = {
+type CardProps = {
   color: string;
   background: string;
   height: string;
 };
 
-export const StyledCard = styled.div<Props>`
+export const StyledCard = styled.div<CardProps>`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   height: ${(props) => props.height + 'px'};
