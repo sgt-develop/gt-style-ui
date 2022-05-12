@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-type Props = {
+type GridProps = {
     variant: string;
     spacing: string;
     direction: string;
@@ -17,7 +17,7 @@ type Props = {
 
 };
 
-const gridSpacing = ({ spacing }: Props) => {
+const gridSpacing = ({ spacing }: GridProps) => {
   // Fallback value if we can't get access to props
   //if (!props || !props.theme || !props.theme.grid.spacing) return '0px';
   if (!spacing) return '0px';
@@ -72,7 +72,7 @@ const gridSpacing = ({ spacing }: Props) => {
   }
   return spacing;
 };
-const gridFlexContainerJustifyContent = ({ justify }:Props) => {
+const gridFlexContainerJustifyContent = ({ justify }:GridProps) => {
   // Fallback value if we can't get access to props
   if (!justify) return 'flex-start';
   // Dynamically determine the Grid Spacing based on props
@@ -102,7 +102,7 @@ const gridFlexContainerJustifyContent = ({ justify }:Props) => {
   }
   return justify;
 };
-const gridFlexContainerDirection = ({direction} :Props) => {
+const gridFlexContainerDirection = ({direction} :GridProps) => {
   // Fallback value if we can't get access to props
   if (!direction) return 'row';
   // Dynamically determine the Grid Spacing based on props
@@ -134,16 +134,16 @@ function getWidthString(span) {
   return `width: ${width}%;`;
 }
 
-export const StyledGrid = styled.div<Props>`
+export const StyledGrid = styled.div<GridProps>`
   padding: ${(props) => gridSpacing(props)};
 `;
-export const StyledGridFlexContainer = styled.div<Props>`
+export const StyledGridFlexContainer = styled.div<GridProps>`
   display: flex;
   flex-direction: ${(props) => gridFlexContainerDirection(props)};
   justify-content: ${(props) => gridFlexContainerJustifyContent(props)};
   flex-wrap: wrap;
 `;
-export const StyledGridFlexItem = styled.div<Props>`
+export const StyledGridFlexItem = styled.div<GridProps>`
   order: ${(props) => props.order};
   ${(props) => (props.xs ? getWidthString(props.xs) : 'width: 100%')};
   @media only screen and (min-width: 768px) {
@@ -156,10 +156,10 @@ export const StyledGridFlexItem = styled.div<Props>`
     ${(props) => props.lg && getWidthString(props.lg)};
   }
 `;
-export const StyledCssGridContainer = styled.div<Props>`
+export const StyledCssGridContainer = styled.div<GridProps>`
   padding: ${(props) => gridSpacing(props)};
 `;
-export const StyledCssGridItems = styled.div<Props>`
+export const StyledCssGridItems = styled.div<GridProps>`
   padding: ${(props) => gridSpacing(props)};
 `;
 

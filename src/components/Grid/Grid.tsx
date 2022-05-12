@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledGrid, StyledGridFlexContainer, StyledGridFlexItem, StyledCssGridContainer, StyledCssGridItems } from './Grid.styles';
 
-export interface Props {
+export interface GridProps {
     variant: string;
     spacing: string;
     direction: string;
@@ -17,7 +17,7 @@ export interface Props {
     lg: string;
 }
 
-const Grid = ({ variant, spacing, direction, justify, alignitems, wrap, order, grow, shrink, xs, sm, md, lg,}: Props) => {
+const Grid = ({ variant, spacing, direction, justify, alignitems, wrap, order, grow, shrink, xs, sm, md, lg,}: GridProps) => {
     if (variant === 'Grid') {
         return <StyledGrid spacing={spacing}></StyledGrid>
       }

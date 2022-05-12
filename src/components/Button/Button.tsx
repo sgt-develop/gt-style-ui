@@ -1,14 +1,14 @@
 import React from "react";
 import { ButtonContained, ButtonOutlined } from './Button.styles';
 
-export interface Props {
+export interface ButtonProps {
   label: string;
   color: string;
   background: string;
   variant: string;
 }
 
-const Button = ({ label,  color, background, variant }: Props) => {
+const Button = ({ label,  color, background, variant }: ButtonProps) => {
   if (variant === 'contained') {
     return (<ButtonContained color={color} background={background}>
               {label}
