@@ -1,31 +1,39 @@
-import React from "react";
-import { ButtonContained, ButtonOutlined } from './Button.styles';
+import * as React from "react";
+import { ButtonContained, ButtonOutlined } from "./button.styled";
 
 export interface ButtonProps {
-  label: string;
-  color: string;
-  background: string;
   variant: string;
+  color: string;
+  background: string; 
+  children: React.ReactNode;
 }
 
-const Button = ({ label,  color, background, variant }: ButtonProps) => {
-  if (variant === 'contained') {
-    return (<ButtonContained color={color} background={background}>
-              {label}
-           </ButtonContained>)
-  }
-  else if (variant === 'outlined') {
-    return (<ButtonOutlined color={color} background={background}>
-            {label}
-           </ButtonOutlined>)
-  }
+function Button ({ children, color, background, variant }: ButtonProps): JSX.Element | null  {
+    if (variant === 'contained') {
+      return (<ButtonContained color={color} background={background}>
+              {children}
+            </ButtonContained>)
+    }
+    else if (variant === 'outlined') {
+      return (<ButtonOutlined color={color} background={background}>
+              {children}
+            </ButtonOutlined>)
+    }
+    return null;
 };
 
 Button.defaultProps = {
-  label: "Test",
   color: 'blue',
-  background: 'red',
+  background: 'yellow',
   variant: 'contained'
 }
 
 export default Button;
+
+
+
+
+
+
+
+
