@@ -29,7 +29,6 @@ export const ButtonContained = styled(StyledButton)<ButtonProps>`
   cursor: pointer;
   border: 0px;
   border-radius: 24px;
-  margin: 8px 16px;
   padding: 0px 16px;
   height: 36px;
   width: auto;
